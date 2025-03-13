@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+    </style>
+    <title>Aurora Grove University</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.hero {
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px; 
+    font-family: "Teachers", sans-serif;
+}
+
+.hero p {
+    color: #555;
+    font-size: 20px;
+    max-width: 600px;
+    margin: auto;
+    font-family: "Teachers", sans-serif;
+}
+
+.buttons {
+    margin-top: 15px;
+}
+
+.buttons button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-family: "Teachers", sans-serif;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #7C671A;
+    color: white;
+    border-radius: 20px;
+}
+
+.btn-secondary {
+    background: rgb(168, 165, 165);
+    border: 1px solid black;
+    color: #F2F2F2;
+    border-radius: 20px;
+}
+
+.image-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Styling */
+
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.teaching-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.involved-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.info-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.teaching-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.involved-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.info-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Teachers", sans-serif;
+}
+
+.teaching-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Teachers", sans-serif;
+}
+
+.involved-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: "Teachers", sans-serif;
+}
+
+.info-text p {
+    font-size: 18px;
+    color: #555;
+    font-family: "Teachers", sans-serif;
+}
+
+.teaching-text p {
+    font-size: 18px;
+    color: #555;
+    font-family: "Teachers", sans-serif;
+}
+
+.involved-text p {
+    font-size: 18px;
+    color: #555;
+    font-family: "Teachers", sans-serif;
+}
+
+.info-links ul {
+    list-style-type: none;
+    padding: 0;
+    font-family: "Teachers", sans-serif;
+}
+
+.teaching-links ul {
+    list-style-type: none;
+    padding: 0;
+    font-family: "Teachers", sans-serif;
+}
+
+.involved-links ul {
+    list-style-type: none;
+    padding: 0;
+    font-family: "Teachers", sans-serif;
+}
+
+.info-links ul li {
+    font-size: 16px;
+    color: black;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.teaching-links ul li {
+    font-size: 16px;
+    color: black;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.involved-links ul li {
+    font-size: 16px;
+    color: black;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+.info-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.teaching-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.involved-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-image img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+.teaching-image img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+.involved-image img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .teaching-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .involved-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .info-text {
+        padding: 0;
+    }
+    .teaching-text {
+        padding: 0;
+    }
+    .involved-text {
+        padding: 0;
+    }
+    
+}
+/* Discover Section */
+.discover-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.discover-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: "Teachers", sans-serif;
+}
+
+.discover-section p {
+    font-size: 18px;
+    color: #555;
+    font-family: "Teachers", sans-serif;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Cards Container */
+.discover-cards {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual Card */
+.discover-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    text-align: center;
+    background: #fff;
+}
+
+/* Card Image */
+.discover-card img {
+    width: 250px;
+    height: 340px;
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* Card Title */
+.discover-card h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: "Teachers", sans-serif;
+}
+
+/* Card Text */
+.discover-card p {
+    font-size: 16px;
+    color: #555;
+    font-family: "Teachers", sans-serif;
+    padding: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .discover-cards {
+        justify-content: center;
+    }
+    .discover-card {
+        min-width: 250px;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .discover-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .discover-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+/* Testimonials Section */
+.testimonials-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: "Teachers", sans-serif;
+}
+
+.testimonials-section p {
+    font-size: 18px;
+    color: #555;
+    font-family: "Teachers", sans-serif;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Testimonials Container */
+.testimonials-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px;
+    white-space: nowrap;
+}
+
+/* Testimonial Card - Ensure Same Height */
+.testimonial-card {
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    width: 300px;
+    height: 200px; /* Fixed height for all testimonials */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Makes sure all elements are spaced evenly */
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    white-space: normal;
+}
+
+/* Stars */
+.stars {
+    font-size: 20px;
+    color: #FFD700; /* Gold color for stars */
+    margin-bottom: 10px;
+}
+
+/* Testimonial Text */
+.testimonial-card p {
+    flex: 1; /* Allows text to take up available space */
+    font-size: 16px;
+    color: #555;
+    font-family: "Teachers", sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Testimonial Info */
+.testimonial-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto; /* Pushes the user info to the bottom */
+}
+
+/* Testimonial Profile Image */
+.testimonial-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Testimonial Navigation Buttons */
+.testimonial-btn {
+    background: white;
+    border: 2px solid #ccc;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.testimonial-btn:hover {
+    background: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonials-container {
+        overflow-x: scroll;
+        justify-content: flex-start;
+    }
+}
+/* Footer Styling */
+.footer {
+    background: #fff;
+    padding: 40px 20px;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-logo {
+    font-family: "Teachers", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #333;
+    font-family: "Teachers", sans-serif;
+    margin: 5px 0;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Footer Links */
+.footer-links {
+    text-align: right;
+}
+
+.footer-links a {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Copyright Section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-links {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="hero">
+        <h1>Aurora Grove School <br>Where Knowledge Meets Opportunity</h1>
+        <p>Empowering students, parents, and teachers with seamless learning and communication.</p>
+        <div class="buttons">
+            <button class="btn-primary">Sign Up</button>
+            <button class="btn-secondary">Login</button>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="univv.jpeg" alt="University">
+    </div>
+
+    <!-- Empowering Students Section -->
+    <div class="info-section">
+        <div class="info-text">
+            <h2>Empowering Students for Success</h2>
+            <p>Education is more than just classes—it's about growth, opportunity, and shaping your future.</p>
+            <div class="info-links">
+                <ul>
+                    <li><p>📢 Stay in the Know – Get real-time updates and important announcements.</p></li>
+                    <li><p>📚 All Your Notes in One Place – Easily access and manage lecture notes.</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-image">
+            <img src="students.jpeg" alt="Students">
+        </div>
+    </div>
+
+    <!-- Teaching Made Easier Section -->
+    <div class="teaching-section">
+        <div class="teaching-image">
+            <img src="teacher.jpeg" alt="Teaching">
+        </div>
+        <div class="teaching-text">
+            <h2>Teaching Made Easier, Learning Made Better</h2>
+            <p>Empowering teachers with tools to create engaging lessons, track student progress, and communicate effortlessly.</p>
+            <div class="teaching-links">
+                <ul>
+                    <li><p>📖 Simplified Lesson Management – Upload, organize, and share course materials.</p></li>
+                    <li><p>💬 Stay Connected – Communicate with students and parents in real time.</p></li>
+                    <li><p>📊 Monitor Growth – Track student performance and provide feedback.</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stay Informed, Stay Involved Section -->
+    <div class="involved-section">
+        <div class="involved-text">
+            <h2>Stay Informed, Stay Involved</h2>
+            <p>Education is a journey, and you play a vital role. Stay connected with your child’s learning experience, gain insights into their progress, and be part of their academic growth.</p>
+            <div class="involved-links">
+                <ul>
+                    <li><p>📢 Real-Time Updates – Get instant notifications on grades, attendance, and school events.</p></li>
+                    <li><p>📚 Access Important Resources – View schedules, assignments, and school announcements.</p></li>
+                    <li><p>📊 Support Your Child’s Success – Stay engaged with personalized insights.</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="involved-image">
+            <img src="parent.jpeg" alt="Stay Informed">
+        </div>
+    </div>
+    <!-- Discover Aurora Grove Section -->
+    <div class="discover-section">
+        <h2>Discover Aurora Grove: A Tradition of Excellence</h2>
+        <p>Empowering students, supporting educators, and engaging parents to build a brighter future together.</p>
+        
+        <div class="discover-cards">
+            <div class="discover-card">
+                <img src="legacy.jpeg" alt="Our Legacy of Learning">
+                <h3>Our Legacy of Learning</h3>
+                <p>With a rich history of academic excellence, Aurora Grove has been shaping bright minds and future leaders for generations.</p>
+            </div>
+
+            <div class="discover-card">
+                <img src="scholarship.jpeg" alt="Scholarships">
+                <h3>Scholarships</h3>
+                <p>We offer a variety of scholarships and financial aid programs to support students in achieving their educational goals.</p>
+            </div>
+
+            <div class="discover-card">
+                <img src="student_life.jpeg" alt="Student Life">
+                <h3>Student Life</h3>
+                <p>At Aurora Grove, students experience a vibrant campus life filled with clubs, events, and opportunities to grow beyond academics.</p>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Customer Testimonials Section -->
+<div class="testimonials-section">
+    <h2>Real Stories, Real Impact</h2>
+    <p>Hear from those who matter most—our students, parents, and educators.</p>
+
+    <div class="testimonials-container">
+        <button class="testimonial-btn left" onclick="prevTestimonial()">&#8592;</button>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Aurora Grove has been a game-changer for my child. The teachers are highly dedicated, and the school environment is exceptional."</p>
+            <div class="testimonial-info">
+                
+                <div>
+                    <strong>Jane Doe</strong>
+                    <p>Parent</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"The school provides an outstanding academic curriculum and a variety of extracurricular activities that enhance our learning experience."</p>
+            <div class="testimonial-info">
+                
+                <div>
+                    <strong>Michael Smith</strong>
+                    <p>Student</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Aurora Grove has provided my students with the best resources for learning. The management truly cares about education."</p>
+            <div class="testimonial-info">
+                
+                <div>
+                    <strong>Emily Johnson</strong>
+                    <p>Teacher</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"I love how this school encourages creativity and provides opportunities for students to explore new skills."</p>
+            <div class="testimonial-info">
+                
+                <div>
+                    <strong>Chris Evans</strong>
+                    <p>Student</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Enrolling my kids in Aurora Grove was the best decision. The academic excellence and values they instill are commendable."</p>
+            <div class="testimonial-info">
+                
+                <div>
+                    <strong>Sarah Miller</strong>
+                    <p>Parent</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>"Aurora Grove provides a balanced learning environment with top-notch technology and dedicated teachers."</p>
+            <div class="testimonial-info">
+                
+                <div>
+                    <strong>David Brown</strong>
+                    <p>IT Teacher</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="testimonial-btn right" onclick="nextTestimonial()">&#8594;</button>
+    </div>
+</div>
+
+</div>
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Left Side (Logo, Address, Contact) -->
+        <div class="footer-left">
+            <div class="footer-logo">Aurora grove</div>
+            <p><strong>Address:</strong><br><a href="https://www.google.com/maps/dir//El+Bez,+Sétif+19000/@36.1961094,5.277315,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x12f33e4f3fe02cdf:0x1dc93d8ec5f1cf93!2m2!1d5.3597161!2d36.1961376?entry=ttu&g_ep=EgoyMDI1MDMxMC4wIKXMDSoASAFQAw%3D%3D">Université Sétif 1 Ferhat Abbas, El Bez, Sétif 19000</a></p>
+            <p><strong>Contact:</strong><br><a href="aurora@gmail.com">aurora@gmail.com</a> | +213 541 492 361</p>
+            
+            
+        </div>
+
+        
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>© 2025 Aurora Grove. All rights reserved.</p>
+    </div>
+</footer>
+
+
+ <script src="index.js"></script>
+</body>
+</html>
