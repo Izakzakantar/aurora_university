@@ -575,9 +575,18 @@
         margin-bottom: 20px;
     }
 }
+/* Initial Hidden State */
+.scroll-animation {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-
-
+/* When the image enters the viewport */
+.scroll-animation.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
     </style>
@@ -596,7 +605,7 @@
     </div>
 
     <div class="image-container">
-        <img src="univv.jpeg" alt="University">
+        <img src="univv.jpeg" alt="University" class="scroll-animation">
     </div>
 
     <!-- Empowering Students Section -->
@@ -612,14 +621,14 @@
             </div>
         </div>
         <div class="info-image">
-            <img src="students.jpeg" alt="Students">
+            <img src="students.jpeg" alt="Students" class="scroll-animation">
         </div>
     </div>
 
     <!-- Teaching Made Easier Section -->
     <div class="teaching-section">
         <div class="teaching-image">
-            <img src="teacher.jpeg" alt="Teaching">
+            <img src="teacher.jpeg" alt="Teaching" class="scroll-animation">
         </div>
         <div class="teaching-text">
             <h2>Teaching Made Easier, Learning Made Better</h2>
@@ -648,7 +657,7 @@
             </div>
         </div>
         <div class="involved-image">
-            <img src="parent.jpeg" alt="Stay Informed">
+            <img src="parent.jpeg" alt="Stay Informed" class="scroll-animation">
         </div>
     </div>
     <!-- Discover Aurora Grove Section -->
@@ -658,19 +667,19 @@
         
         <div class="discover-cards">
             <div class="discover-card">
-                <img src="legacy.jpeg" alt="Our Legacy of Learning">
+                <img src="legacy.jpeg" alt="Our Legacy of Learning" class="scroll-animation">
                 <h3>Our Legacy of Learning</h3>
                 <p>With a rich history of academic excellence, Aurora Grove has been shaping bright minds and future leaders for generations.</p>
             </div>
 
             <div class="discover-card">
-                <img src="scholarship.jpeg" alt="Scholarships">
+                <img src="scholarship.jpeg" alt="Scholarships" class="scroll-animation">
                 <h3>Scholarships</h3>
                 <p>We offer a variety of scholarships and financial aid programs to support students in achieving their educational goals.</p>
             </div>
 
             <div class="discover-card">
-                <img src="student_life.jpeg" alt="Student Life">
+                <img src="student_life.jpeg" alt="Student Life" class="scroll-animation">
                 <h3>Student Life</h3>
                 <p>At Aurora Grove, students experience a vibrant campus life filled with clubs, events, and opportunities to grow beyond academics.</p>
             </div>
