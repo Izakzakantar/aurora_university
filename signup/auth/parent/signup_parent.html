@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Signup</title>
+    <link rel="stylesheet" href="../css/styles_teacher.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Parent Signup</h2>
+            <div class="logo">A</div>
+
+            <form action="signup_parent.php" method="POST">
+                <div class="input-group">
+                    <input type="text" name="prenom" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="nom" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="telephone" placeholder="Phone Number">
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email (Optional)">
+                </div>
+                <div class="input-group">
+                    <input type="password" name="mot_de_passe" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="relation">Relation:</label>
+                    <select name="relation" id="relation" required>
+                        <option value="Père">Père</option>
+                        <option value="Mère">Mère</option>
+                        <option value="Tuteur">Tuteur</option>
+                    </select>
+                </div>
+                <button type="submit" class="login-btn">SIGN UP</button>
+            </form>
+
+            <p class="signup-text">Already have an account? <a href="index.html">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

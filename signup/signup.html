@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Role</title>
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .button-group {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            transform: translateY(20px); /* Start slightly lower */
+            opacity: 0;
+            animation: slideUp 0.8s ease-in-out forwards;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .btn:nth-child(1) {
+            background: #7C671B;
+            animation-delay: 0.3s;
+        } 
+
+        .btn:nth-child(2) {
+            background: #7C671B;
+            animation-delay: 0.5s;
+        }
+
+        .btn:nth-child(3) {
+            background: #7C671B;
+            animation-delay: 0.7s;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Select Your Role</h2>
+        <p>Please choose your role to continue with registration.</p>
+        
+        <div class="button-group">
+            <button onclick="window.location.href='auth/student/signup_student.html'" class="btn">I'm a Student</button>
+            <button onclick="window.location.href='auth/teacher/signup_teacher.html'" class="btn">I'm a Teacher</button>
+            <button onclick="window.location.href='auth/parent/signup_parent.html'" class="btn">I'm a Parent</button>
+        </div>
+    </div>
+
+</body>
+</html>
