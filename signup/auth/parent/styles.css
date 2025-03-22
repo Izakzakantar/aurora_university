@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+/* General Styles */
+body {
+    font-family:"Teachers", sans-serif;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Signup Container with Border */
+.signup-container {
+    background: white;
+    padding: 40px;
+    width: 400px;
+    border-radius: 5px;
+    border: 2px solid #7C671B; /* ✅ Added black border like the image */
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: calc(100% - 20px); /* ✅ Fixed padding issue to match image */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Centered Signup Button */
+.button-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 15px;
+}
+/* Change the placeholder font */
+.input-group input::placeholder {
+    font-family: "Teachers", sans-serif; /* Change this to your desired font */
+    font-size: 14px; /* Adjust size if needed */
+    color: #999; /* Optional: Change placeholder color */
+}
+
+/* Signup Button */
+.signup-btn {
+    width: 80%; /* ✅ Reduced width to match the reference image */
+    padding: 12px;
+    background-color: #7C671B;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "Teachers", sans-serif;
+}
+
+.signup-btn:hover {
+    opacity: 0.8;
+}
+
+/* Login Text */
+.login-text {
+    margin-top: 15px;
+    font-size: 14px;
+    
+}
+
+.login-text a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+/* Input Group - Ensures Label is on the Left */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ✅ Aligns label to the left */
+}
+
+/* Style the label */
+.input-group label {
+    font-size: 14px;
+    font-family: "Teachers", sans-serif;
+    color: #333;
+    margin-bottom: 5px; /* ✅ Adds spacing between label and select */
+}
+
+/* Style the select dropdown */
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Teachers", sans-serif;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    appearance: none; /* ✅ Removes default browser styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%237C671B' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>"); 
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+/* Style the dropdown options */
+.input-group select option {
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    font-family: "Teachers", sans-serif;
+}
+
+/* When select is focused */
+.input-group select:focus {
+    border-color: #7C671B;
+    outline: none;
+    box-shadow: 0 0 5px rgba(124, 103, 27, 0.5);
+}
+

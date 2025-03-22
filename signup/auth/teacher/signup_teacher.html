@@ -4,47 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Signup</title>
-    <link rel="stylesheet" href="../css/styles_teacher.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
+    <div class="signup-container">
+        <div class="signup-box">
             <h2>Sign Up</h2>
-            <div class="logo">A</div>
+            <p>Please enter your details to create an account.</p>
+            
             <form action="singup_teacher.php" method="POST">
-
-
-
                 <div class="input-group">
                     <input type="text" name="prenom" placeholder="First Name" required>
-                    <span class="error-icon">⚠️</span>
                 </div>
                 <div class="input-group">
                     <input type="text" name="nom" placeholder="Last Name" required>
-                    <span class="error-icon">⚠️</span>
                 </div>
                 <div class="input-group">
                     <input type="email" name="email" placeholder="Email" required>
-                    <span class="error-icon">⚠️</span>
                 </div>
                 <div class="input-group">
                     <input type="password" name="mot_de_passe" placeholder="Password" required>
-                    <span class="error-icon">⚠️</span>
                 </div>
                 <div class="input-group">
                     <input type="text" name="specialisation" placeholder="Specialization (Subject)" required>
-                    <span class="error-icon">⚠️</span>
                 </div>
                 <div class="input-group">
                     <input type="tel" name="telephone" placeholder="Phone Number">
-                    <span class="error-icon">⚠️</span>
                 </div>
                 <div class="input-group">
                     <input type="date" name="date_embauche" required>
                 </div>
-                <button type="submit" class="login-btn">SIGN UP</button>
+                <div class="button-container">
+                    <button type="submit" class="signup-btn">Sign Up</button>
+                </div>
             </form>
-            <p class="signup-text">Already have an account? <a href="index.html">Login</a></p>
+
+            <p class="login-text">Already have an account? <a href="../../../login/auth/login.html">Log In</a></p>
         </div>
     </div>
 </body>

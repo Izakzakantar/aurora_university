@@ -9,14 +9,14 @@ class Student extends User {
 
     // Function to fetch parent_id using the parent's last name (nom)
     private function getParentIdByLastName($parent_nom) {
-        $stmt = mysqli_prepare($this->conn, "SELECT id FROM arents WHERE nom = ?");
+        $stmt = mysqli_prepare($this->conn, "SELECT id FROM parents WHERE nom = ?");
         mysqli_stmt_bind_param($stmt, "s", $parent_nom);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_store_result($stmt);
         mysqli_stmt_bind_result($stmt, $parent_id);
         mysqli_stmt_fetch($stmt);
 
-        return $parent_id ?? null; // Return the parent_id if found, otherwise NULL
+        return $parent_id ;
     }
 
     // Function to register a student
@@ -35,4 +35,5 @@ class Student extends User {
         return false;
     }
 }
+
 ?>

@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="login-container">
         <div class="login-box">
             <h2>Welcome</h2>
-            <div class="logo">A</div>
+            <p>Please enter your credentials to log in.</p>
             
-            <!-- Ensure the form submits correctly -->
             <form action="login.php" method="POST">
                 <div class="input-group">
-                    <input type="email" name="email" placeholder="Email" required>
-                    <span class="error-icon">⚠️</span>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
                 </div>
                 <div class="input-group">
-                    <input type="password" name="password" placeholder="Password" required>
-                    <span class="error-icon">⚠️</span>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="login-btn">LOGIN</button>
+                <div class="button-container">
+                    <button type="submit" class="login-btn">LOGIN</button>
+                </div>
             </form>
 
-            <p class="signup-text">Don’t have an account? <a href="../signup/signup.html">Sign Up</a></p>
+            <p class="signup-text">Don’t have an account? <a href="../../signup/signup.html">Sign Up</a></p>
         </div>
     </div>
 </body>
