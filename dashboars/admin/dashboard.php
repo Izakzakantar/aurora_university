@@ -67,8 +67,8 @@
   <a href="#"><i class="bi bi-speedometer2 me-2"></i>Tableau de bord</a>
   <a href="manage_enseignants.php"><i class="bi bi-person-badge me-2"></i>Gestion des enseignants</a>
   <a href="manage_eleves.php"><i class="bi bi-people-fill me-2"></i>Gestion des élèves</a>
-  <a href="attribution_classes.php"><i class="bi bi-building me-2"></i>Attribution des classes</a>
-  <a href="attribution_matieres.php"><i class="bi bi-book-half me-2"></i>Attribution des matières</a>
+  <a href="attribution_classes.php"><i class="bi bi-building me-2"></i>Attribution des classes et matieres</a>
+  
   <a href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Déconnexion</a>
 </div>
 
@@ -113,7 +113,7 @@
         <div class="card-body">
           <h5 class="card-title"><i class="bi bi-book-half"></i> Attribution des matières</h5>
           <p class="card-text">Associer des matières aux enseignants.</p>
-          <a href="attribution_matieres.php" class="btn btn-custom">Attribuer des matières</a>
+          <a href="attribution_classes.php" class="btn btn-custom">Attribuer des matières</a>
         </div>
       </div>
     </div>
