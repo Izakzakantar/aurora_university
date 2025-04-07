@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Vérifier si l'utilisateur est connecté et a le rôle Enseignant
+if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'Enseignant') {
+    // Redirection vers la page de connexion ou page d’erreur
+    header("Location: /login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -69,7 +79,7 @@
 
 <!-- Contenu principal -->
 <div class="content animate__animated animate__fadeIn">
-  <h2>Bienvenue 👋</h2>
+  <h2>Bienvenue 👋 <?php echo htmlspecialchars($_SESSION['user_name']); ?></h2>
   <p>Voici les actions disponibles :</p>
 
   <div class="row mt-4">

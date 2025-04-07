@@ -17,7 +17,23 @@ class User {
         mysqli_stmt_bind_param($stmt, "sssss", $prenom, $nom, $email, $hashed_password, $role);
 
         if (mysqli_stmt_execute($stmt)) {
-            return mysqli_insert_id($this->conn); // Return new user ID
+            $user_id = mysqli_insert_id($this->conn);
+
+            // Start session and set session variables
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['user_name'] = $prenom . " " . $nom;
+            $_SESSION['role'] = $role;
+
+            // Redirect based on role
+            if ($role === 'Enseignant') {
+                header("Location: /dashboars/teacher/teacher_dashboard.php");
+                exit();
+            }
+
+            return $user_id;
         } else {
             return false;
         }
@@ -38,6 +54,9 @@ class User {
             $_SESSION['user_id'] = $id;
             $_SESSION['user_name'] = $prenom . " " . $nom;
             $_SESSION['role'] = $role;
+
+            
+
             return true;
         }
         return false;

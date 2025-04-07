@@ -1,41 +1,56 @@
 <?php
-/*session_start();
+session_start();
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'Enseignant') {
     header("Location: login.php");
     exit;
-}*/
+}
 
-require_once 'Database.php';
-require_once 'classes/NoteManager.php';
+require_once __DIR__ . '/classes/Database.php';
+require_once __DIR__ . '/classes/NoteManager.php';
 
 $db = new Database();
 $manager = new NoteManager($db);
 $conn = $db->getConnection();
 
-//$enseignant_id = $_SESSION['user_id'];
+$enseignant_id = $_SESSION['user_id'];
 $success = "";
 
-$eleves = $manager->getElevesParEnseignant($enseignant_id);
-$matieres = $manager->getMatieresParEnseignant($enseignant_id);
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $eleve_id = intval($_POST['eleve_id']);
-    $matiere_id = intval($_POST['matiere_id']);
+    $eleve_nom = trim($_POST['eleve_nom']);
+    $matiere_nom = trim($_POST['matiere_nom']);
     $note = floatval($_POST['note']);
     $commentaire = trim($_POST['commentaire']);
     $annee_scolaire = trim($_POST['annee_scolaire']);
     $niveau_etude = trim($_POST['niveau_etude']);
     $date_evaluation = date('Y-m-d');
 
-    if ($manager->ajouter($eleve_id, $matiere_id, $note, $commentaire, $date_evaluation, $annee_scolaire, $niveau_etude)) {
-        $success = "Note enregistrée avec succès.";
+    $eleve_id = null;
+    $matiere_id = null;
+
+    $stmt = $conn->prepare("SELECT id FROM Utilisateurs WHERE  nom = ?");
+    $stmt->bind_param("s", $eleve_nom);
+    $stmt->execute();
+    $stmt->bind_result($eleve_id);
+    $stmt->fetch();
+    $stmt->close();
+
+    $stmt = $conn->prepare("SELECT id FROM Matieres WHERE nom = ?");
+    $stmt->bind_param("s", $matiere_nom);
+    $stmt->execute();
+    $stmt->bind_result($matiere_id);
+    $stmt->fetch();
+    $stmt->close();
+
+    if ($eleve_id && $matiere_id) {
+        if ($manager->ajouter($eleve_id, $matiere_id, $note, $commentaire, $date_evaluation, $annee_scolaire, $niveau_etude)) {
+            $success = "✅ Note enregistrée avec succès.";
+        }
+    } else {
+        $success = "❌ Élève ou matière introuvable.";
     }
 }
-
-$notes = $manager->listerParEnseignant($enseignant_id);
 ?>
 
-<!-- Partie HTML identique à celle que tu m'as donnée, mais avec les balises PHP -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -67,9 +82,10 @@ $notes = $manager->listerParEnseignant($enseignant_id);
   <a href="suivi_absences.php"><i class="bi bi-exclamation-circle me-2"></i>Absences & Retards</a>
   <a href="logout.php"><i class="bi bi-box-arrow-right me-2"></i>Déconnexion</a>
 </div>
+
 <div class="content animate__animated animate__fadeIn">
   <h2 class="mb-4">Saisie des notes</h2>
-  <?php if ($success): ?><div class="alert alert-success"><?= $success ?></div><?php endif; ?>
+  <?php if ($success): ?><div class="alert alert-info"><?= $success ?></div><?php endif; ?>
 
   <button class="btn btn-custom mb-3" onclick="toggleForm()">
     <i class="bi bi-plus-circle"></i> Ajouter une note
@@ -79,22 +95,12 @@ $notes = $manager->listerParEnseignant($enseignant_id);
     <form method="POST">
       <div class="row">
         <div class="col-md-4 mb-3">
-          <label>Élève</label>
-          <select class="form-select" name="eleve_id" required>
-            <option value="">-- Sélectionner --</option>
-            <?php foreach ($eleves as $el): ?>
-              <option value="<?= $el['id'] ?>"><?= htmlspecialchars($el['prenom'] . ' ' . $el['nom']) ?></option>
-            <?php endforeach; ?>
-          </select>
+          <label>Nom complet de l’élève</label>
+          <input type="text" class="form-control" name="eleve_nom" placeholder="Ex: Sarah Bensalem" required>
         </div>
         <div class="col-md-4 mb-3">
-          <label>Matière</label>
-          <select class="form-select" name="matiere_id" required>
-            <option value="">-- Sélectionner --</option>
-            <?php foreach ($matieres as $m): ?>
-              <option value="<?= $m['id'] ?>"><?= htmlspecialchars($m['nom']) ?></option>
-            <?php endforeach; ?>
-          </select>
+          <label>Nom de la matière</label>
+          <input type="text" class="form-control" name="matiere_nom" placeholder="Ex: Mathématiques" required>
         </div>
         <div class="col-md-4 mb-3">
           <label>Année scolaire</label>
@@ -119,36 +125,8 @@ $notes = $manager->listerParEnseignant($enseignant_id);
       <button type="submit" class="btn btn-custom">Enregistrer</button>
     </form>
   </div>
-
-  <div class="table-responsive">
-    <table class="table table-striped table-hover shadow-sm">
-      <thead class="table-dark text-center">
-        <tr>
-          <th>Élève</th>
-          <th>Année</th>
-          <th>Niveau</th>
-          <th>Matière</th>
-          <th>Note</th>
-          <th>Commentaire</th>
-          <th>Date</th>
-        </tr>
-      </thead>
-      <tbody class="text-center">
-        <?php foreach ($notes as $note): ?>
-        <tr class="animate__animated animate__fadeInUp">
-          <td><?= htmlspecialchars($note['eleve_prenom'] . ' ' . $note['eleve_nom']) ?></td>
-          <td><?= htmlspecialchars($note['annee_scolaire']) ?></td>
-          <td><?= htmlspecialchars($note['niveau_etude']) ?></td>
-          <td><?= htmlspecialchars($note['matiere_nom']) ?></td>
-          <td><?= htmlspecialchars($note['note']) ?></td>
-          <td><?= htmlspecialchars($note['commentaire']) ?></td>
-          <td><?= htmlspecialchars($note['date_evaluation']) ?></td>
-        </tr>
-        <?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
 </div>
+
 <script>
   function toggleForm() {
     const form = document.getElementById('form-section');
