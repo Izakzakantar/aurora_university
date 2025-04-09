@@ -18,13 +18,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // ✅ Fix the incorrect concatenation (use . instead of +)
         echo "Welcome, " . $_SESSION['user_name']; 
 
-        /* Uncomment this when ready to redirect
-        if ($_SESSION['role'] === "Enseignant") {
-            header("Location: ../../teacher_dashboard.php");
+        // Uncomment this when ready to redirect
+        if ($_SESSION['role'] === "Admin") {
+            header("Location: /dashboars/admin/dashboard.php");
+            exit();
+        } elseif ($_SESSION['role'] === "Enseignant") {
+            header("Location: /dashboars/teacher/teacher_dashboard.php");
+            exit();
+        } elseif ($_SESSION['role'] === "Élève") {
+            header("Location: /dashboars/student/dashboard_student.php");
+            exit();
+        } elseif ($_SESSION['role'] === "Parent") {
+            header("Location: /dashboars/parent/dashboard_parent.php");
+            exit();
         } else {
-            header("Location: ../../dashboard.php");
+            // Fallback: role not recognized
+            header("Location: /login/auth/login.html");
+            exit();
         }
-        */
+        
+        
         exit();
     } else {
         echo "❌ Invalid email or password.";

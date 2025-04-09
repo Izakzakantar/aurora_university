@@ -4,7 +4,7 @@ session_start();
 // Vérifier si l'utilisateur est connecté et a le rôle Enseignant
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'Enseignant') {
     // Redirection vers la page de connexion ou page d’erreur
-    header("Location: /login.php");
+    header("Location: /login/auth/login.html");
     exit();
 }
 ?>
@@ -94,7 +94,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role
     </div>
 
     <div class="col-md-6 mb-3">
-      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-0.5s">
         <div class="card-body">
           <h5 class="card-title"><i class="bi bi-journal-text"></i> Historique scolaire</h5>
           <p class="card-text">Consultez le parcours scolaire des élèves.</p>
@@ -104,7 +104,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role
     </div>
 
     <div class="col-md-6 mb-3">
-      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-2s">
+      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-0.5s">
         <div class="card-body">
           <h5 class="card-title"><i class="bi bi-exclamation-circle"></i> Absences & Retards</h5>
           <p class="card-text">Suivez les absences et retards de vos élèves.</p>

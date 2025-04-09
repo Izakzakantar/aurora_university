@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'Admin') {
+    header("Location: /login/auth/login.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -89,7 +97,7 @@
     </div>
 
     <div class="col-md-6 mb-3">
-      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-0.5s">
         <div class="card-body">
           <h5 class="card-title"><i class="bi bi-people-fill"></i> Gestion des élèves</h5>
           <p class="card-text">Ajouter, modifier ou supprimer un élève.</p>
@@ -99,7 +107,7 @@
     </div>
 
     <div class="col-md-6 mb-3">
-      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-2s">
+      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-0.5s">
         <div class="card-body">
           <h5 class="card-title"><i class="bi bi-building"></i> Attribution des classes</h5>
           <p class="card-text">Attribuer des classes aux enseignants.</p>
@@ -109,7 +117,7 @@
     </div>
 
     <div class="col-md-6 mb-3">
-      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-3s">
+      <div class="card shadow-sm animate__animated animate__fadeInUp animate__delay-0.5s">
         <div class="card-body">
           <h5 class="card-title"><i class="bi bi-book-half"></i> Attribution des matières</h5>
           <p class="card-text">Associer des matières aux enseignants.</p>

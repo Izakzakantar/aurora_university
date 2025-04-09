@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Signup</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <h2>Sign Up</h2>
+            <p>Please enter your details to create an admin account.</p>
+            
+            <form action="signup_admin.php" method="POST">
+                <div class="input-group">
+                    <input type="text" name="prenom" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" name="nom" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" name="mot_de_passe" placeholder="Password" required>
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="signup-btn">Sign Up</button>
+                </div>
+            </form>
+
+            <p class="login-text">Already have an account? <a href="../../../login/auth/login.html">Log In</a></p>
+        </div>
+    </div>
+</body>
+</html>
