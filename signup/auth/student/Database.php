@@ -2,7 +2,7 @@
 class Database {
     private $host = "localhost";
     private $user = "root";
-    private $password = "ishak2004";
+    private $password = "";
     private $dbname = "aurora_db";
     private $conn;
 
